@@ -1,6 +1,11 @@
-#我靠,果然,必须使用链表
+# 我靠,果然,必须使用链表
 # 我理解错了,我以为是l1的2,4,3是一次输入作为一个list
 # 这道题的真正意思是.2-->4-->3-->None None结束,类似于PHP中的Iterator对象
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
 class Solution:
 
@@ -16,22 +21,22 @@ class Solution:
             if l1 == None:
                 l1_num = 0
             else:
-                l1_num=l1.val
-                l1=l1.next
+                l1_num = l1.val
+                l1 = l1.next
             if l2 == None:
                 l2_num = 0
             else:
-                l2_num=l2.val
-                l2=l2.next
+                l2_num = l2.val
+                l2 = l2.next
             temp_sum = l1_num + l2_num + div
             div = temp_sum // 10
             mod = temp_sum % 10
             if res == None:
                 res = ListNode(mod)
-                start=res
+                start = res
             else:
                 res.next = ListNode(mod)
-                res=res.next
+                res = res.next
         return start
 
 # final=res->res.next=新的res->新的res.next
