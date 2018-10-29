@@ -1,0 +1,29 @@
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+
+Example 1:
+
+Input: "babad"
+Output: "bab"
+Note: "aba" is also a valid answer.
+
+Example 2:
+
+Input: "cbbd"
+Output: "bb"
+
+---
+
+给定字符串,找出其中最长回文字符串.该字符串最长为1000
+
+思路:
+
+只可能是abccba
+或者
+abcba
+这两种,参考第三题的common_string,只能从倒数第一个或者倒数第二个字符开始回文
+
+abcdefgfedcbazxzabcdefgfedcba
+    这种也很特殊,相当于嵌套了一个
+
+尝试一下:
+首先找出 aba或者aa,这两种形式的模式,然后分别从这两种形式,向两边反推

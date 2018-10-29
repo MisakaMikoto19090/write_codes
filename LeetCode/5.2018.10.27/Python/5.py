@@ -15,44 +15,37 @@ class Solution:
             # efggfexyz
             # 012345678
             # xaax
-
             if s[i:i + 1] == s[i + 1:i + 2]:
                 # or s[i:i + 1] == s[i + 2:i + 3]:
                 j = i - 1
                 k = i + 2
-                temp_palindrome_str_init = s[i:k]
-
-                while j >= 0 and k <= total_len - 1:
-                    if s[j:j + 1] == s[k:k + 1]:
-                        temp_palindrome_str_init = s[j:j + 1] + temp_palindrome_str_init + s[k:k + 1]
-                        j = j - 1
-                        k = k + 1
-                    else:
-                        break
-                if len(temp_palindrome_str_init) >= longest_palindrome_length:
-                    longest_palindrome_length = len(temp_palindrome_str_init)
-                    longest_palindrome_str = temp_palindrome_str_init
-            # 把上下两个重复代码提取出来
             # xax
             if s[i:i + 1] == s[i + 2:i + 3]:
                 # efgagfe
                 # 012345678
                 j = i - 1
                 k = i + 3
-
-                temp_palindrome_str_init = s[i:k]
-
-                while j >= 0 and k <= total_len - 1:
-                    if s[j:j + 1] == s[k:k + 1]:
-                        temp_palindrome_str_init = s[j:j + 1] + temp_palindrome_str_init + s[k:k + 1]
-                        j = j - 1
+            # xxx
+            if s[i:i + 1] == s[i + 1:i + 2] and s[i:i + 1] == s[i + 2:i + 3]:
+                k = i + 2
+                while j <= total_len - 1:
+                    if s[i:i + 1] == s[k:k + 1]:
                         k = k + 1
                     else:
                         break
-                if len(temp_palindrome_str_init) >= longest_palindrome_length:
-                    longest_palindrome_length = len(temp_palindrome_str_init)
-                    longest_palindrome_str = temp_palindrome_str_init
-            i = i + 1
+                k = k + 1
+            temp_palindrome_str_init = s[i:k]
+            while j >= 0 and k <= total_len - 1:
+                if s[j:j + 1] == s[k:k + 1]:
+                    temp_palindrome_str_init = s[j:j + 1] + temp_palindrome_str_init + s[k:k + 1]
+                    j = j - 1
+                    k = k + 1
+                else:
+                    break
+            if len(temp_palindrome_str_init) >= longest_palindrome_length:
+                longest_palindrome_length = len(temp_palindrome_str_init)
+                longest_palindrome_str = temp_palindrome_str_init
+
         if longest_palindrome_str == "":
             return s[:1]
 

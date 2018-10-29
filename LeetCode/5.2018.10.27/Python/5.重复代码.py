@@ -9,13 +9,13 @@ class Solution:
         i = 0
         longest_palindrome_length = 0
         longest_palindrome_str = ""
-        flag = 0
         while i <= total_len - 1:
             # bb或aba,才能作为回文字符串中间的位置
             # 按照题目的说法,还有一种 是 abc ,返回a
             # efggfexyz
             # 012345678
             # xaax
+
             if s[i:i + 1] == s[i + 1:i + 2]:
                 # or s[i:i + 1] == s[i + 2:i + 3]:
                 j = i - 1
@@ -32,6 +32,7 @@ class Solution:
                 if len(temp_palindrome_str_init) >= longest_palindrome_length:
                     longest_palindrome_length = len(temp_palindrome_str_init)
                     longest_palindrome_str = temp_palindrome_str_init
+            # 把上下两个重复代码提取出来
             # xax
             if s[i:i + 1] == s[i + 2:i + 3]:
                 # efgagfe
@@ -57,7 +58,8 @@ class Solution:
 
         return longest_palindrome_str
 
-
+# 唉 ,我去,这样还更慢了.什么情况
+# 跟网速有关系,提交,一会快一会慢
 S = Solution()
 s = "babadada"
 print(S.longestPalindrome(s))

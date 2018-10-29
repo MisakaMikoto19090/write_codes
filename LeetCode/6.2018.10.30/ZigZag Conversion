@@ -1,0 +1,38 @@
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   N
+A P L S I I G
+Y   I   R
+
+And then read line by line: "PAHNAPLSIIGYIR"
+
+Write the code that will take a string and make this conversion given a number of rows:
+
+string convert(string s, int numRows);
+
+Example 1:
+
+Input: s = "PAYPALISHIRING", numRows = 3
+Output: "PAHNAPLSIIGYIR"
+
+Example 2:
+
+Input: s = "PAYPALISHIRING", numRows = 4
+Output: "PINALSIGYAHRPI"
+Explanation:
+
+P     I    N
+A   L S  I G
+Y A   H R
+P     I
+
+---
+        # 题目的额意思是N字形排列,上面的弄的像w
+"PAYPALISHIRING" 这个字符串是写成指定行数的模式(为了可读性,可以使用固定字体,个人感觉这个应该是指无衬线字体,每个字母一样宽)
+然后一行一行的读取
+
+编写一个函数,给定字符串和行数,对字符串作出相应的转换
+
+没有明白这个题什么意思?怎么转换?
+ZigZag是曲折的意思.
+明白了,这个是N字形排列,
