@@ -50,6 +50,8 @@ class Solution
                 $node->next = new ListNode($current);
                 $node = $node->next;
             }
+            $l1 = $l1->next;
+            $l2 = $l2->next;
         } while (!is_null($l1) || !is_null($l2) || $up);
         return $start;
     }
