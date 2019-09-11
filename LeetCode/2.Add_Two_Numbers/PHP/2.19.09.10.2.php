@@ -33,10 +33,21 @@ class Solution
         $up = 0;
         $node = null;
         do {
-            $a = is_null($l1) ? 0 : $l1->val;
-            $b = is_null($l2) ? 0 : $l2->val;
-            $sum = $a + $b + $up;
-            if ($sum > 10) {
+            //计算和,并且l1和l2链表进一步.
+            if (is_null($l1)) {
+                $l1_val = 0;
+            } else {
+                $l1_val = $l1->val;
+                $l1 = $l1->next;
+            }
+            if (is_null($l2)) {
+                $l2_val = 0;
+            } else {
+                $l2_val = $l2->val;
+                $l2 = $l2->next;
+            }
+            $sum = $l1_val + $l2_val + $up;//这样不直到会不会更快.
+            if ($sum >= 10) {
                 $up = 1;
                 $current = $sum - 10;
             } else {
@@ -44,19 +55,17 @@ class Solution
                 $current = $sum;
             }
             if (is_null($node)) {
-                $node = new ListNode($current);
+                //判断是否是第一个.
+                $node = new ListNode($current);     //2019.09.11 更新:看了最快的代码.这个变量可以不用.可以初始化一个负数的node,直接更改
                 $start = $node;
             } else {
                 $node->next = new ListNode($current);
                 $node = $node->next;
             }
-            $l1 = $l1->next;
-            $l2 = $l2->next;
-        } while (!is_null($l1) || !is_null($l2) || $up);
+        } while (!is_null($l1) || !is_null($l2) || $up);//不知道能不能在这里判断,并且直接处理l1和l2
         return $start;
     }
 }
-
 
 $a = new ListNode(2);
 $b = new ListNode(4);
@@ -74,15 +83,6 @@ $x->next = $y;
 $y->next = $z;
 $z->next = null;
 
-$l = $a + $x;
-
 $s = new Solution();
 $s->addTwoNumbers($a, $x);
-
-$a = 100000000000000000000000000001;
-$b = number_format($a, 0, '', '');
-echo $b;
-$c = 564;
-$res = number_format((number_format($a, 0, '', '') + $b), 0, '', '');//字符串
-$b = 1;
 
