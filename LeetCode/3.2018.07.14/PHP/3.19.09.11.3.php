@@ -22,12 +22,18 @@ class Solution
             if (strpos($temp_str, $s[$i]) === false) {
                 //之前完全没有出现过
                 $temp_str .= $s[$i];
-                $possible_str = $temp_str;
+                if (strpos($possible_str, $s[$i]) === false) {
+                    $possible_str .= $s[$i];  //理论上可能的最长不重复字符
+                }
             } else {
                 //出现过
                 $first = strpos($temp_str, $s[$i]);
                 $temp_str = substr($temp_str, ($first + 1));
                 $temp_str .= $s[$i];
+                //可能的情况abcbba...  abc==>cb==>b==>ba
+                //          abcabc  abc==>bca==>cab==>abc
+                //这里还能不能优化呢
+
             }
             strlen($temp_str) > $max ? $max = strlen($temp_str) : null;
         }

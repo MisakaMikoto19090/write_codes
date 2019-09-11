@@ -1,38 +1,49 @@
 # 1. 英文
 
-You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+Given a string, find the length of the longest substring without repeating characters.
 
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Example 1:
 
-Example:
+Input: "abcabcbb"
+Output: 3 
+Explanation: The answer is "abc", with the length of 3. 
 
-Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-Output: 7 -> 0 -> 8
-Explanation: 342 + 465 = 807.
+Example 2:
 
+Input: "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
 
+Example 3:
+
+Input: "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3. 
+             Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
 ## 2. 中文
 
-给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
-如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+示例 1:
 
-您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+输入: "abcabcbb"
+输出: 3 
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
 
-示例：
+示例 2:
 
-输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
-输出：7 -> 0 -> 8
-原因：342 + 465 = 807
+输入: "bbbbb"
+输出: 1
+解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+
+示例 3:
+
+输入: "pwwkew"
+输出: 3
+解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
 
 来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/add-two-numbers
+链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
-node1.val=2
-node1.next->4
-node2.val=4
-node2.next->3
-node3.val=3
-node3.next=None
