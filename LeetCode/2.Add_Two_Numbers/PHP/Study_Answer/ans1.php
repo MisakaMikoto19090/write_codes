@@ -19,7 +19,7 @@ class Solution {
                 $curr = $res;
             }else{
                 $curr->next = new ListNode($sum%10);
-                $curr = $curr->next;
+                $curr = $curr->next;    //关键.为下一次循环做好准备,否则就是一直在修改同一个ListNode
             }
             if($p !== null) $p = $p->next;
             if($q !== null) $q = $q->next;
