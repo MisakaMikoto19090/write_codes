@@ -6,6 +6,7 @@ class Solution {
      * @param Integer $numRows
      * @return String
      */
+    //两个答案好像差不多.都是找规律
     function convert($s, $numRows) {
         $len = strlen($s);
         $str = '';
@@ -22,3 +23,6 @@ class Solution {
         return $str;
     }
 }
+
+$s=new Solution();
+$s->convert("PAYPALISHIRING",3);

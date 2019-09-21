@@ -19,6 +19,7 @@ class Solution {
         for ($i = 0; $i < $numRows; $i++) {
             $distance = 2 * ($numRows - 1); // first row and last row items have the distance
             $distance2 = ($i > 0 && $i < $numRows -1) ? $distance - 2 * $i: 0; // the other row have the distance
+            //这里是相当于换行,
             for ($j = $i; $j < strlen($s); $j += $distance) {
                 $return_str .= $s[$j];
 
@@ -30,3 +31,6 @@ class Solution {
         return $return_str;
     }
 }
+
+$s=new Solution();
+$s->convert("PAYPALISHIRING",3);
