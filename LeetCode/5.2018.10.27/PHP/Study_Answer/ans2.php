@@ -29,7 +29,7 @@ class Solution {
             if (strlen($result) < strlen($ret)) {
                 $result = $ret;
             }
-            if (strlen($result) > (($len - $i) * 2)) {
+            if (strlen($result) > (($len - $i) * 2)) {  //这里也挺重要的.aaaaabbbb 5>(9-4)
                 break;
             }
         }
@@ -39,6 +39,7 @@ class Solution {
 $s = new Solution();
 //echo $s->longestPalindrome("cbbd") . "\n";
 //echo $s->longestPalindrome("ccd") . "\n";
-echo $s->longestPalindrome("aaaa") . "\n";
-echo $s->longestPalindrome("adam") . "\n";
-echo $s->longestPalindrome("babadada") . "\n";
+//echo $s->longestPalindrome("aaaa") . "\n";
+//echo $s->longestPalindrome("adam") . "\n";
+//echo $s->longestPalindrome("babadada") . "\n";
+echo $s->longestPalindrome("aaaaabbbb") . "\n";
