@@ -20,3 +20,5 @@ class Solution {
         return array(0, 0);
     }
 }
+$s= new Solution();
+$s->twoSum([1,2,4,7],6);
