@@ -1,0 +1,88 @@
+---
+title: Longest_Substring_Without_Repeating_Characters
+---
+<!-- TOC -->
+
+- [1. 英文](#1-英文)
+- [2. 中文](#2-中文)
+- [3. 思路](#3-思路)
+
+<!-- /TOC -->
+
+# 1. 英文
+
+Given a string, find the length of the longest substring without repeating characters.
+
+---
+
+Example 1:
+
+Input: "abcabcbb"
+
+Output: 3
+
+Explanation: The answer is "abc", with the length of 3.
+
+---
+
+Example 2:
+
+Input: "bbbbb"
+
+Output: 1
+
+Explanation: The answer is "b", with the length of 1.
+
+---
+
+Example 3:
+
+Input: "pwwkew"
+
+Output: 3
+
+Explanation: The answer is "wke", with the length of 3.
+Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+# 2. 中文
+
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+
+---
+
+示例 1:
+
+输入: "abcabcbb"
+
+输出: 3
+
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+
+---
+
+示例 2:
+
+输入: "bbbbb"
+
+输出: 1
+
+解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+
+---
+
+示例 3:
+
+输入: "pwwkew"
+
+输出: 3
+
+解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+
+来源：力扣（LeetCode）
+链接：<https://leetcode-cn.com/problems/longest-substring-without-repeating-characters>
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+# 3. 思路
+
+第一想法就是循环,然后一个临时string,每个字符判断是否在临时string中.出现重复,开始下一个循环.
