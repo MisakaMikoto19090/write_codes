@@ -2,22 +2,27 @@ package a_FuZaDu;
 
 public class Main {
 
-	public static void main(String[] args){
-		JunTanFuZaDu test=new JunTanFuZaDu();
-		test.push_back(1);
-		test.push_back(2);
-		test.push_back(3);
-		test.push_back(4);
-		test.push_back(5);
-		test.pop_back();
-		//复杂度震荡
-		test.push_back(5);
-		test.pop_back();
-		test.push_back(5);
-		test.pop_back();
-		test.push_back(5);
+    public static void main(String[] args) {
+        System.out.println(fib1(3));
+        System.out.println(fib2(3));
+        System.out.println(fib3(3));
 
-	}
+
+        JunTanFuZaDu test = new JunTanFuZaDu();
+        test.push_back(1);
+        test.push_back(2);
+        test.push_back(3);
+        test.push_back(4);
+        test.push_back(5);
+        test.pop_back();
+        //复杂度震荡
+        test.push_back(5);
+        test.pop_back();
+        test.push_back(5);
+        test.pop_back();
+        test.push_back(5);
+
+    }
 
 	/*  fib
 	public static void main(String[] args) {
@@ -51,50 +56,55 @@ public class Main {
 	}
 	/**/
 
-	//递归
-	public static int fib1(int n) {
-		n = Math.abs(n);
-		if (n <= 2) {
-			return n;
-		} else {
-			return fib1(n - 1) + fib1(n - 2);
-		}
-	}
+    //递归
+    public static int fib1(int n) {
+        n = Math.abs(n);
+        if (n < 2) {
+            return n;
+        } else {
+            return fib1(n - 1) + fib1(n - 2);
+        }
+    }
 
-	//循环
-	public static int fib2(int n) {
-		n = Math.abs(n);
-		if (n <= 1) {
-			return n;
-		}
-		int start = 0;
-		int next = 1;
-		int tmp;
-		while (n > 1) {//倒着好理解一点.O(n)
-			tmp = next;
-			next = start + next;
-			start = tmp;
-			n--;
-		}
-		//0 1 2 3 4 5 6  循环次数是n-1次
-		//0 1 1 2 3 5 8
-		return next;
-	}
+    //循环
+    public static int fib2(int n) {
+        n = Math.abs(n);
+        if (n <= 1) {
+            return n;
+        }
+        int start = 0;
+        int next = 1;
+        int tmp;
+        while (n > 1) {//倒着好理解一点.O(n)
+            tmp = next;
+            next = start + next;
+            start = tmp;
+            n--;
 
-	//方程公式
-	public static int fib3(int n) {
+            //还可以再精简一下
+//			next=start+next;
+//			start=next-start;
+        }
+        //0 1 2 3 4 5 6  循环次数是n-1次
+        //0 1 1 2 3 5 8
+        return next;
+    }
 
-		return n;
-	}
+    //方程公式,最快捷，O（1）,前提是数学函数的复杂度是O（1），有时候pow实现是O（logn）
+    public static int fib3(int n) {
+        double c = Math.sqrt(5);
+        return (int) ((Math.pow((1 + c) / 2, n) - Math.pow((1 - c) / 2, n)) / c);
 
-	//最好,最坏,平均复杂度例子
-	public static void find(int target) {
-		int[] int_arr = new int[]{1,2,3,4,5,6,7,8,9};
-		for (int i=0;i<int_arr.length;i++){
-			if (int_arr[i]==target){
-				System.out.println("Find target");
-			}
-		}
-	}
+    }
+
+    //最好,最坏,平均复杂度例子
+    public static void find(int target) {
+        int[] int_arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        for (int i = 0; i < int_arr.length; i++) {
+            if (int_arr[i] == target) {
+                System.out.println("Find target");
+            }
+        }
+    }
 
 }
