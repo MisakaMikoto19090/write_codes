@@ -1,4 +1,4 @@
-package c_LianBiao;
+package c_链表;
 
 /**
  * 链表
@@ -15,6 +15,11 @@ public class LinkedList<E> extends AbstractList<E> {
         E element;
         Node<E> next;//指向下一个节点
 
+        /**
+         * 构造函数
+         * @param element
+         * @param next
+         */
         public Node(E element, Node<E> next) {
             this.element = element;
             this.next = next;
@@ -25,11 +30,12 @@ public class LinkedList<E> extends AbstractList<E> {
     public void clear() {
         size = 0;
         first = null;
+        //删除first后,链表中各个元素依次删除
     }
 
     @Override
     public E get(int index) {
-        return null;
+        return node(index).element;
     }
 
     @Override
@@ -48,6 +54,7 @@ public class LinkedList<E> extends AbstractList<E> {
      */
     @Override
     public void add(int index, E element) {
+        rangeCheckForAdd(index);
         if (index == 0) {
             first = new Node<>(element, first);
         } else {
@@ -58,7 +65,7 @@ public class LinkedList<E> extends AbstractList<E> {
     }
 
     /**
-     * 指定位置添加
+     * 最后面添加
      *
      * @param element
      */
@@ -75,7 +82,8 @@ public class LinkedList<E> extends AbstractList<E> {
      */
     @Override
     public E remove(int index) {
-        Node<E> node = first;
+        rangeCheck(index);//创建链表后直接remove
+        Node<E> node = first;//构造一个指向第一个元素的node
         if (index == 0) {
             first = first.next;
         } else {
@@ -86,7 +94,6 @@ public class LinkedList<E> extends AbstractList<E> {
         }
         size--;
         return node.element;
-
     }
 
     @Override
@@ -144,11 +151,13 @@ public class LinkedList<E> extends AbstractList<E> {
 //        }
         while (node != null) {
             string.append(node.element);
-            string.append(",");
             node = node.next;
+//            if (node==null){
+//                break;
+//            }
+            string.append(",");
         }
-        string.deleteCharAt(string.length() - 1);
-
+        string.deleteCharAt(string.length() - 1);//删除最后一个,
         string.append("]");
         return string.toString();
     }

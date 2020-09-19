@@ -1,4 +1,4 @@
-package a_FuZaDu;
+package a_复杂度;
 
 public class Main {
 
@@ -8,7 +8,7 @@ public class Main {
         System.out.println(fib3(3));
 
 
-        JunTanFuZaDu test = new JunTanFuZaDu();
+        均摊复杂度 test = new 均摊复杂度();
         test.push_back(1);
         test.push_back(2);
         test.push_back(3);

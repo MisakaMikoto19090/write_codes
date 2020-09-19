@@ -1,11 +1,11 @@
-package a_FuZaDu;
+package a_复杂度;
 
-public class JunTanFuZaDu<Item> {
+public class 均摊复杂度<Item> {
 	private Item[] data;
 	private int size;        //数组中元素个数
 	private int capacity;    //数组中可以容纳的最大的元素个数
 
-	public JunTanFuZaDu() {
+	public 均摊复杂度() {
 		data = (Item[]) new Object[4];
 		size = 0;
 		capacity = 4;

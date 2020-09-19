@@ -1,4 +1,4 @@
-package b_DongTaiShuZu;
+package b_动态数组;
 
 public class Person {
     private int age;

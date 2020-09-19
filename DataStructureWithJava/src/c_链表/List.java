@@ -1,7 +1,7 @@
-package c_LianBiao;
+package c_链表;
 
 /**
- * 声明公共接口,接口中定义的常量 默认就是static final
+ * 声明公共接口,接口中定义的常量 默认就是static final,各种方法默认都是public,可省略.
  *
  * @param <E>
  */

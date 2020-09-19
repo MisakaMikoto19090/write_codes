@@ -1,4 +1,4 @@
-package c_LianBiao;
+package c_链表;
 
 public abstract class AbstractList<E> implements List<E> {
     /**
@@ -45,6 +45,7 @@ public abstract class AbstractList<E> implements List<E> {
 
     /**
      * 抛出越界异常
+     *
      * @param index
      */
     protected void outOfBounds(int index) {
@@ -53,6 +54,7 @@ public abstract class AbstractList<E> implements List<E> {
 
     /**
      * 删改查月结判断
+     *
      * @param index
      */
     protected void rangeCheck(int index) {
@@ -63,6 +65,7 @@ public abstract class AbstractList<E> implements List<E> {
 
     /**
      * 增加 越界判断
+     *
      * @param index
      */
     protected void rangeCheckForAdd(int index) {
