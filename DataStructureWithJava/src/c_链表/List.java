@@ -6,6 +6,9 @@ package c_链表;
  * @param <E>
  */
 public interface List<E> {
+    /**
+     * 未找到指定元素
+     */
     int ELEMENT_NOT_FOUND = -1;
     //不能放在AbstractList中,因为AbstractList是抽象类,真正可能实例化的是List接口和链表,动态数组类
     //这个定义需要对外界可见.

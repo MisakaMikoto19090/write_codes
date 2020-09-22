@@ -1,22 +1,25 @@
-package c_链表;
+package c_链表.single;
+
+import c_链表.AbstractList;
 
 /**
- * 链表
+ * 单向链表
+ *
+ * @param <E>
  */
-public class LinkedList<E> extends AbstractList<E> {
-
-    private Node<E> first;  //first指向第一个node元素节点
+public class SingleLinkedList<E> extends AbstractList<E> {
+    private Node<E> first;//first指向第一个node元素节点===>first就是第一个节点,想着指向容易搞混.
 
     /**
-     * 静态内部类,旨在LinkedList中使用  节点类
-     */
-    private static class Node<E> {   //泛型
-        //内部类可以省略修饰符
+     * 静态内部类,只在LinkedList中使用,所以可以用private  节点类
+     */ //内部类可以省略修饰符
+    private static class Node<E> {    //<E>是泛型
         E element;
         Node<E> next;//指向下一个节点
 
         /**
-         * 构造函数
+         * 同名就是构造函数
+         *
          * @param element
          * @param next
          */
@@ -26,6 +29,9 @@ public class LinkedList<E> extends AbstractList<E> {
         }
     }
 
+    /**
+     * 清空链表
+     */
     @Override
     public void clear() {
         size = 0;
@@ -33,11 +39,24 @@ public class LinkedList<E> extends AbstractList<E> {
         //删除first后,链表中各个元素依次删除
     }
 
+    /**
+     * 获取某个索引的值
+     *
+     * @param index
+     * @return
+     */
     @Override
     public E get(int index) {
         return node(index).element;
     }
 
+    /**
+     * 设置某个索引的值
+     *
+     * @param index
+     * @param element
+     * @return
+     */
     @Override
     public E set(int index, E element) {
         Node<E> node = node(index);
@@ -58,24 +77,14 @@ public class LinkedList<E> extends AbstractList<E> {
         if (index == 0) {
             first = new Node<>(element, first);
         } else {
-            Node<E> pre = node(index - 1);
-            pre.next = new Node<>(element, pre.next);
+            Node<E> prev = node(index - 1);
+            prev.next = new Node<>(element, prev.next);
         }
         size++;
     }
 
     /**
-     * 最后面添加
-     *
-     * @param element
-     */
-    @Override
-    public void add(E element) {
-        add(size, element);
-    }
-
-    /**
-     * 删除
+     * 删除某index节点
      *
      * @param index
      * @return
@@ -87,15 +96,20 @@ public class LinkedList<E> extends AbstractList<E> {
         if (index == 0) {
             first = first.next;
         } else {
-            Node<E> pre = node(index - 1);
-            node = pre.next;
-            pre.next = pre.next.next;
-
+            Node<E> prev = node(index - 1);
+            node = prev.next;
+            prev.next = node.next;
         }
         size--;
         return node.element;
     }
 
+    /**
+     * 查找某元素的索引位置
+     *
+     * @param element
+     * @return
+     */
     @Override
     public int indexOf(E element) {
         Node<E> node = first;
@@ -108,18 +122,17 @@ public class LinkedList<E> extends AbstractList<E> {
             }
         } else {
             for (int i = 0; i < size; i++) {
-                if (node.element == element) {
+                if (element.equals(node.element)) {
                     return i;
                 }
                 node = node.next;
             }
         }
-        return 0;
+        return ELEMENT_NOT_FOUND;
     }
 
     /**
-     * 返回某位置的节点
-     *
+     * 返回某index位置的节点
      * @param index
      * @return
      */
@@ -140,7 +153,7 @@ public class LinkedList<E> extends AbstractList<E> {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("size:" + size);
-        string.append(" [");
+        string.append(", [");
         Node<E> node = first;
 //        for (int i = 0; i < size; i++) {
 //            if (i != 0) {

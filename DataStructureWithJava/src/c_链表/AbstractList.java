@@ -1,5 +1,9 @@
 package c_链表;
 
+/**
+ * 抽象的线性表
+ * @param <E>
+ */
 public abstract class AbstractList<E> implements List<E> {
     /**
      * 元素的数量
@@ -7,8 +11,7 @@ public abstract class AbstractList<E> implements List<E> {
     protected int size;
 
     /**
-     * 元素的数量
-     *
+     * 获取元素的数量
      * @return
      */
     public int size() {
@@ -16,8 +19,7 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     /**
-     * 是否为空
-     *
+     * 对象是否为空
      * @return
      */
     public boolean isEmpty() {
@@ -26,7 +28,6 @@ public abstract class AbstractList<E> implements List<E> {
 
     /**
      * 是否包含某个元素
-     *
      * @param element
      * @return
      */
@@ -36,7 +37,6 @@ public abstract class AbstractList<E> implements List<E> {
 
     /**
      * 添加元素到尾部
-     *
      * @param element
      */
     public void add(E element) {
@@ -45,7 +45,6 @@ public abstract class AbstractList<E> implements List<E> {
 
     /**
      * 抛出越界异常
-     *
      * @param index
      */
     protected void outOfBounds(int index) {
@@ -53,8 +52,7 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     /**
-     * 删改查月结判断
-     *
+     * 删改查index越界判断
      * @param index
      */
     protected void rangeCheck(int index) {
@@ -64,8 +62,7 @@ public abstract class AbstractList<E> implements List<E> {
     }
 
     /**
-     * 增加 越界判断
-     *
+     * 增加元素 越界判断
      * @param index
      */
     protected void rangeCheckForAdd(int index) {
