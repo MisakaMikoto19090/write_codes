@@ -3,6 +3,7 @@ package c_链表;
 import b_动态数组.Asserts;
 import c_链表.ArrayList.ArrayListAutoResize;
 import c_链表.ArrayList.ArrayListBigger;
+import c_链表.Circle.DoubleCircleLinkedList;
 import c_链表.Circle.SingleCircleLinkedList;
 import c_链表.Single.SingleHeadLinkedList;
 import c_链表.Single.SingleLinkedList;
@@ -39,14 +40,33 @@ public class Main {
 //        java.util.LinkedList linkedList = new java.util.LinkedList<>();
     }
 
+    static void josephus() {
+        DoubleCircleLinkedList list = new DoubleCircleLinkedList();
+        for (int i = 1; i <= 8; ++i) {
+            list.add(i);
+        }
+        //current指向头节点
+        list.reset();
+        while (!list.isEmpty()) {
+            list.next();
+            list.next();
+            System.out.println(list.remove());
+        }
+    }
+
     public static void main(String[] args) {
-        testList(new SingleLinkedList<>());
-        testList(new DoubleLinkedList<>());
-        testList(new SingleHeadLinkedList<>());
-        testList(new SingleCircleLinkedList<>());
-        testList(new ArrayListBigger<>());
-        testList(new ArrayListAutoResize<>());
-//        testList(new DoubleCircleLinkedList<>());
+        //约瑟夫
+//        josephus();
+
+        //测试
+//        testList(new SingleLinkedList<>());
+//        testList(new DoubleLinkedList<>());
+//        testList(new SingleHeadLinkedList<>());
+//        testList(new SingleCircleLinkedList<>());
+//        testList(new ArrayListBigger<>());
+//        testList(new ArrayListAutoResize<>());
+
+        testList(new DoubleCircleLinkedList<>());
 
     }
 }

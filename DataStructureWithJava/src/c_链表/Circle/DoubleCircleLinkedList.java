@@ -4,12 +4,13 @@ import c_链表.AbstractList;
 
 /**
  * 双向循环链表
+ *
  * @param <E>
  */
 public class DoubleCircleLinkedList<E> extends AbstractList<E> {
-
-    private Node<E> first;  //first指向第一个node元素节点
+    private Node<E> first;
     private Node<E> last;
+    private Node<E> current;
 
     /**
      * 静态内部类,旨在LinkedList中使用  节点类
@@ -32,17 +33,62 @@ public class DoubleCircleLinkedList<E> extends AbstractList<E> {
             this.next = next;
         }
 
+        /**
+         * 双向循环是没有null的
+         *
+         * @return
+         */
         public String toString() {
             StringBuilder sb = new StringBuilder();
             //循环链表,所以是没有null一说的
-            sb.append(prev.element);
-            sb.append("_").append(element).append("_");
-            sb.append(next.element);
-
+//            sb.append(prev.element).append("_").append(element).append("_").append(next.element);
+            sb.append(prev.element).append("_").append(element).append("_").append(next.element);
             return sb.toString();
         }
     }
 
+    /**
+     * 重置,指向头元素
+     */
+    public void reset() {
+        current = first;
+    }
+
+    /**
+     * current移动到下一个元素,有点像迭代器
+     *
+     * @return
+     */
+    public E next() {
+        if (current == null) {
+            return null;
+        }
+        current = current.next;
+        return current.element;
+    }
+
+    /**
+     * 删除
+     *
+     * @return
+     */
+    public E remove() {
+        if (current == null) {
+            return null;
+        }
+        Node<E> next = current.next;
+        E element = remove(current);
+        if (size == 0) {
+            current = null;
+        } else {
+            current = next;
+        }
+        return element;
+    }
+
+    /**
+     * 清空链表
+     */
     @Override
     public void clear() {
         size = 0;
@@ -58,17 +104,29 @@ public class DoubleCircleLinkedList<E> extends AbstractList<E> {
         //Integer a=new Integer(10); 后面的new对象在堆空间中,前面的局部变量指向它
     }
 
+    /**
+     * 获取index位置元素
+     *
+     * @param index
+     * @return
+     */
     @Override
     public E get(int index) {
         return node(index).element;
     }
 
+    /**
+     * 设置index位置元素
+     *
+     * @param index
+     * @param element
+     * @return
+     */
     @Override
     public E set(int index, E element) {
         Node<E> node = node(index);
         E old = node.element;
         node.element = element;
-        Integer a = new Integer(10);
         return old;
     }
 
@@ -83,7 +141,7 @@ public class DoubleCircleLinkedList<E> extends AbstractList<E> {
         rangeCheckForAdd(index);
         if (index == size) {
             Node<E> oldLast = last;
-            last = new Node<E>(oldLast, element, first);
+            last = new Node<>(oldLast, element, first);
             if (oldLast == null) {
                 //向空链表添加
                 first = last;
@@ -105,13 +163,12 @@ public class DoubleCircleLinkedList<E> extends AbstractList<E> {
                 //index==0;
                 first = node;
             }
-
         }
         size++;
     }
 
     /**
-     * 删除
+     * 删除指定位置
      *
      * @param index
      * @return
@@ -119,20 +176,26 @@ public class DoubleCircleLinkedList<E> extends AbstractList<E> {
     @Override
     public E remove(int index) {
         rangeCheck(index);//创建链表后直接remove
-        Node<E> node = first;
+        return remove(node(index));
+    }
+
+    /**
+     * 新的删除方式,删除当前节点
+     *
+     * @param node
+     * @return
+     */
+    private E remove(Node<E> node) {
         if (size == 1) {
             first = null;
             last = null;
         } else {
-            node = node(index);
             Node<E> prev = node.prev;
             Node<E> next = node.next;
             prev.next = next;
             next.prev = prev;
-
-
             //好简介啊,先考虑中间,再考虑两边.
-            if (index == 0) { //node==first
+            if (node == first) { //node==first
                 //index=0
                 first = next;
             }
@@ -146,6 +209,12 @@ public class DoubleCircleLinkedList<E> extends AbstractList<E> {
         return node.element;
     }
 
+    /**
+     * 某元素索引
+     *
+     * @param element
+     * @return
+     */
     @Override
     public int indexOf(E element) {
         Node<E> node = first;
@@ -202,25 +271,23 @@ public class DoubleCircleLinkedList<E> extends AbstractList<E> {
         string.append("size:" + size);
         string.append(" [");
         Node<E> node = first;
-//        for (int i = 0; i < size; i++) {
-//            if (i != 0) {
-//                string.append(',');
-//            }
-//            string.append(node.element);
-//            node = node.next;
-//        }
-        while (node != null) {
-            string.append(node);//这里最好用node,调用node的tostring
+        for (int i = 0; i < size; i++) {
+            if (i != 0) {
+                string.append(',');
+            }
+            string.append(node);
             node = node.next;
-//            if (node==null){
-//                break;
-//            }
-            string.append(",");
         }
-        string.deleteCharAt(string.length() - 1);//删除最后一个,
+//        while (node != null) {
+//            string.append(node);//这里最好用node,调用node的tostring
+//            node = node.next;
+////            if (node==null){
+////                break;
+////            }
+//            string.append(",");
+//        }
+//        string.deleteCharAt(string.length() - 1);//删除最后一个,
         string.append("]");
         return string.toString();
     }
-
-
 }
