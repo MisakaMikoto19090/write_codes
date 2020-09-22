@@ -90,7 +90,7 @@ public class Main {
         return next;
     }
 
-    //方程公式,最快捷，O（1）,前提是数学函数的复杂度是O（1），有时候pow实现是O（logn）
+    //方程公式,最快捷，O(1),前提是数学函数的复杂度是O(1)，有时候pow实现是O(logn)
     public static int fib3(int n) {
         double c = Math.sqrt(5);
         return (int) ((Math.pow((1 + c) / 2, n) - Math.pow((1 - c) / 2, n)) / c);

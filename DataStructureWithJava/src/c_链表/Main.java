@@ -1,10 +1,11 @@
 package c_链表;
 
 import b_动态数组.Asserts;
-import c_链表.circle.DoubleCircleLinkedList;
-import c_链表.circle.SingleCircleLinkedList;
-import c_链表.single.SingleHeadLinkedList;
-import c_链表.single.SingleLinkedList;
+import c_链表.ArrayList.ArrayListAutoResize;
+import c_链表.ArrayList.ArrayListBigger;
+import c_链表.Circle.SingleCircleLinkedList;
+import c_链表.Single.SingleHeadLinkedList;
+import c_链表.Single.SingleLinkedList;
 
 public class Main {
 
@@ -39,10 +40,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        testList(new DoubleLinkedList<>());
-//        testList(new SingleLinkedList<>());
+        testList(new SingleLinkedList<>());
+        testList(new DoubleLinkedList<>());
         testList(new SingleHeadLinkedList<>());
-//        testList(new SingleCircleLinkedList<>());
+        testList(new SingleCircleLinkedList<>());
+        testList(new ArrayListBigger<>());
+        testList(new ArrayListAutoResize<>());
 //        testList(new DoubleCircleLinkedList<>());
 
     }

@@ -1,5 +1,8 @@
 package b_动态数组;
 
+/**
+ * 对象人
+ */
 public class Person {
     private int age;
     private String name;

@@ -1,4 +1,4 @@
-package c_链表.single;
+package c_链表.Single;
 
 import c_链表.AbstractList;
 

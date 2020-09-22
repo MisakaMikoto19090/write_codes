@@ -14,8 +14,8 @@ public class ArrayList2<wtf> {
     private wtf[] elements;
 
     /**
-     * 默认容量， final是常量（相当于const）
-     * 私有 静态（保证在内存中只有一份） 常量 int
+     * 默认容量， final是常量(相当于const)
+     * 私有 静态(保证在内存中只有一份) 常量 int
      */
     private static final int DEFAULT_CAPACITY = 10;
 

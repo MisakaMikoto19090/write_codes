@@ -39,7 +39,5 @@ public class Main {
         test.add(100);
         test.add("hello");
         System.out.println(test);
-
     }
-
 }
