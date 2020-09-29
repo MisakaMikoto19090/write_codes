@@ -3,6 +3,7 @@ package c_链表;
 import b_动态数组.Asserts;
 import c_链表.ArrayList.ArrayListAutoResize;
 import c_链表.ArrayList.ArrayListBigger;
+import c_链表.Circle.CircleArrayList;
 import c_链表.Circle.DoubleCircleLinkedList;
 import c_链表.Circle.SingleCircleLinkedList;
 import c_链表.Single.SingleHeadLinkedList;
@@ -17,7 +18,7 @@ public class Main {
         list.add(4);
         list.add(0, 5);//[5,1,2,3,4]
         list.add(2, 66);//[5,1,66,2,3,4]
-        list.add(list.size(), 77);//[5,1,66,2,3,4,7]
+        list.add(list.size(), 77);//[5,1,66,2,3,4,77]
 
         list.remove(0);//[1,66,2,3,4,7]
         list.remove(2);//[1,66,3,4,7]
@@ -65,8 +66,9 @@ public class Main {
 //        testList(new SingleCircleLinkedList<>());
 //        testList(new ArrayListBigger<>());
 //        testList(new ArrayListAutoResize<>());
+            testList(new CircleArrayList<>());
 
-        testList(new DoubleCircleLinkedList<>());
+//        testList(new DoubleCircleLinkedList<>());
 
     }
 }
