@@ -4,7 +4,7 @@ import _leetcode.a链表.ListNode;
 
 //https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
 
-public class Solution {
+public class MySolution {
     /**
      * 因为它传进来的是一个node节点,所以可以之直接把当前接的替换成下一个节点
      * <p>

@@ -7,7 +7,7 @@ import _leetcode.a链表.ListNode;
 /**
  * 好菜啊,看答案才做出来,增加一个头节点.
  */
-public class Solution {
+public class MySolution {
     public static ListNode removeElements(ListNode head, int val) {
         ListNode start = new ListNode(0);
         start.next = head;

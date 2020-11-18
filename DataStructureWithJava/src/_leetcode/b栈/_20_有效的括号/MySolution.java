@@ -4,7 +4,7 @@ import java.util.Stack;
 
 //https://leetcode-cn.com/problems/valid-parentheses/
 
-public class Solution {
+public class MySolution {
     public static boolean isValid(String s) {
         //如果是{[( 加入左边的栈,)]}加入右边的,然后两个对比一下
         if (s.length() % 2 == 1) {

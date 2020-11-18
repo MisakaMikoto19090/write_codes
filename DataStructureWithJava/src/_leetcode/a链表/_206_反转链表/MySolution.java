@@ -6,7 +6,7 @@ import _leetcode.a链表.ListNode;
 // https://leetcode-cn.com/problems/reverse-linked-list/
 
 
-class Solution {
+class MySolution {
     /**
      * 递归,我日,这个思路好难整理啊.
      * 思路,从头的下一个开始,最后处理头

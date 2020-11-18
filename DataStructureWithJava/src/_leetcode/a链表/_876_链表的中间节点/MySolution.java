@@ -4,7 +4,7 @@ import _leetcode.a链表.ListNode;
 
 // https://leetcode-cn.com/problems/middle-of-the-linked-list/
 
-public class Solution {
+public class MySolution {
     public static ListNode middleNode(ListNode head) {
         ListNode middle = head;
         int middle_count = 1;

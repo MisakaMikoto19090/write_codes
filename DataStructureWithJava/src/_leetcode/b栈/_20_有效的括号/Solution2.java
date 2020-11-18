@@ -1,4 +1,4 @@
-package _leetcode.栈._20_有效的括号;
+package _leetcode.b栈._20_有效的括号;
 
 //https://leetcode-cn.com/problems/valid-parentheses/
 

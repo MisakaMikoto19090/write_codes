@@ -4,7 +4,7 @@ import _leetcode.a链表.ListNode;
 
 // https://leetcode-cn.com/problems/linked-list-cycle/
 
-public class Solution {
+public class MySolution {
     public int POS = -1;
 
     /**

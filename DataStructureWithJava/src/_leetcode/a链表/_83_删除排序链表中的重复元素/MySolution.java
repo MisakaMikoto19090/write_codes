@@ -7,7 +7,7 @@ import _leetcode.a链表.ListNode;
 /**
  *
  */
-public class Solution {
+public class MySolution {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode start=head;
         while (head!=null&&head.next!=null){

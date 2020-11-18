@@ -1,4 +1,4 @@
-package _leetcode.链表;
+package _leetcode.a链表;
 
 public class ListNode {
 
