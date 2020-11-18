@@ -1,4 +1,4 @@
-package _leetcode.栈._20_有效的括号;
+package _leetcode.b栈._20_有效的括号;
 
 import java.util.Stack;
 
@@ -23,25 +23,26 @@ public class Solution {
                     }
                     char left = stack.pop();
                     //不是等于
-                    if (left=='('&&c!=')'){
-                        return  false;
+                    if (left == '(' && c != ')') {
+                        return false;
                     }
-                    if (left=='['&&c!=']'){
-                        return  false;
+                    if (left == '[' && c != ']') {
+                        return false;
                     }
-                    if (left=='{'&&c!='}'){
-                        return  false;
+                    if (left == '{' && c != '}') {
+                        return false;
                     }
                 }
             }
             return stack.isEmpty();
         }
     }
-    public static void main(String[] args){
-        String a= "()";
-        if (isValid(a)){
+
+    public static void main(String[] args) {
+        String a = "()";
+        if (isValid(a)) {
             System.out.println("yes");
-        }else{
+        } else {
             System.out.println("no");
 
         }

@@ -1,6 +1,6 @@
-package _leetcode.链表._83_删除排序链表中的重复元素;
+package _leetcode.a链表._83_删除排序链表中的重复元素;
 
-import _leetcode.链表.ListNode;
+import _leetcode.a链表.ListNode;
 
 // https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
 

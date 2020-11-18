@@ -1,6 +1,6 @@
-package _leetcode.链表._203_移除链表元素;
+package _leetcode.a链表._203_移除链表元素;
 
-import _leetcode.链表.ListNode;
+import _leetcode.a链表.ListNode;
 
 // https://leetcode-cn.com/problems/remove-linked-list-elements/
 

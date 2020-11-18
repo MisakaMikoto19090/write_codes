@@ -1,6 +1,4 @@
-package _leetcode.栈._856_括号的分数;
-
-import java.util.Stack;
+package _leetcode.b栈._856_括号的分数;
 
 //https://leetcode-cn.com/problems/score-of-parentheses/
 class Solution {

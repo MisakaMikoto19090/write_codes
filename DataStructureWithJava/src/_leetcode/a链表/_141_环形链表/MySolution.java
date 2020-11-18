@@ -1,6 +1,6 @@
-package _leetcode.链表._141_环形链表;
+package _leetcode.a链表._141_环形链表;
 
-import _leetcode.链表.ListNode;
+import _leetcode.a链表.ListNode;
 
 // https://leetcode-cn.com/problems/linked-list-cycle/
 

@@ -1,6 +1,6 @@
-package _leetcode.链表._237_删除链表中的节点;
+package _leetcode.a链表._237_删除链表中的节点;
 
-import _leetcode.链表.ListNode;
+import _leetcode.a链表.ListNode;
 
 //https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
 

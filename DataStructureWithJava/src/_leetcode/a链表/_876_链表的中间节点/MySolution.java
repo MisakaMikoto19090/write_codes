@@ -1,6 +1,6 @@
-package _leetcode.链表._876_链表的中间节点;
+package _leetcode.a链表._876_链表的中间节点;
 
-import _leetcode.链表.ListNode;
+import _leetcode.a链表.ListNode;
 
 // https://leetcode-cn.com/problems/middle-of-the-linked-list/
 
